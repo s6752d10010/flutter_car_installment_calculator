@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:seven_page_app/views/splash_screen_ui.dart';
+import 'package:seven_page_app/views/input_screen_ui.dart';
 
 void main() {
   runApp(FlutterCarInstallmentCalculatorApp());
@@ -16,7 +16,7 @@ class FlutterCarInstallmentCalculatorApp extends StatelessWidget {
         primarySwatch: Colors.green,
         textTheme: GoogleFonts.kanitTextTheme(),
       ),
-      home: SplashScreenUI(),
+      home: InputScreenUI(),
     );
   }
 }

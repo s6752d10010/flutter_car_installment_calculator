@@ -1,69 +1,66 @@
 import 'package:flutter/material.dart';
-import 'input_screen_ui.dart'; // อย่าลืม import หน้านี้
 
-class SplashScreenUI extends StatefulWidget {
-  const SplashScreenUI({super.key});
+class InputScreenUI extends StatefulWidget {
+  const InputScreenUI({super.key});
 
   @override
-  State<SplashScreenUI> createState() => _SplashScreenUIState();
+  State<InputScreenUI> createState() => _InputScreenUIState();
 }
 
-class _SplashScreenUIState extends State<SplashScreenUI> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(
-      Duration(seconds: 3),
-      () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => inputScreen()),
-        );
-      },
-    );
-  }
-
+class _InputScreenUIState extends State<InputScreenUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/img01.png',
-              width: 230.0,
-            ),
-            SizedBox(height: 20.0),
-            Text(
-              'Car Installment',
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.lightGreenAccent,
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text(
+          'CI Calculator',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 30.0,
               ),
-            ),
-            Text(
-              'Calculator',
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.lightGreenAccent,
+              Text(
+                'คำนวณค่างวดรถ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
               ),
-            ),
-            SizedBox(height: 30.0),
-            CircularProgressIndicator(color: Colors.white),
-            SizedBox(height: 30.0),
-            Text(
-              'Created by NinniN DTI-SAU',
-              style: TextStyle(fontSize: 14.0, color: Colors.lightGreenAccent),
-            ),
-            Text(
-              'Version 1.0.0',
-              style: TextStyle(fontSize: 15.0, color: Colors.lightGreenAccent),
-            ),
-          ],
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.green,
+                    width: 2,
+                  ),
+                ),
+                child: InkWell(
+                  onTap: () {},
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'assets/images/img02.png',
+                      width: 150,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
